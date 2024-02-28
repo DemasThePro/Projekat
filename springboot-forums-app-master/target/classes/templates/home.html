@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Forum Diskusija</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            margin-right: 20px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .signup-btn {
+            margin-right: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Online Forum</h1>
+</header>
+
+<div class="container">
+    <h1>Welcome to Online Forum</h1>
+    <button class="signup-btn" onclick="location.href='/signup'">Login in</button>
+    <button onclick="location.href='/signin'">Sign In</button>
+</div>
+
+<form id="signInForm" style="display: none;">
+    <label for="usernameSignIn">Username:</label>
+    <input type="text" id="usernameSignIn" name="usernameSignIn" required>
+
+    <label for="passwordSignIn">Password:</label>
+    <input type="password" id="passwordSignIn" name="passwordSignIn" required>
+
+    <button type="submit">Sign In</button>
+</form>
+
+<form id="signUpForm" style="display: none;">
+    <label for="emailSignUp">Email:</label>
+    <input type="email" id="emailSignUp" name="emailSignUp" required>
+
+    <label for="usernameSignUp">Username:</label>
+    <input type="text" id="usernameSignUp" name="usernameSignUp" required>
+
+    <label for="passwordSignUp">Password:</label>
+    <input type="password" id="passwordSignUp" name="passwordSignUp" required>
+
+    <button type="submit">Sign Up</button>
+</form>
+
+<script>
+    function showSignInForm() {
+        document.getElementById("signInForm").style.display = "flex";
+        document.getElementById("signUpForm").style.display = "none";
+    }
+
+    function showSignUpForm() {
+        document.getElementById("signInForm").style.display = "none";
+        document.getElementById("signUpForm").style.display = "flex";
+    }
+</script>
+
+</body>
+</html>
